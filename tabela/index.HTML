@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topo">
+        <div>
+            <h1>Organizador Inteligente</h1>
+            <p>Organize suas tarefas e acompanhe seu progresso.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="painel">
+            <h2>Meu progresso</h2>
+            <div class="progresso-info">
+                <span id="textoProgresso">0 de 0 tarefas concluídas</span>
+                <strong id="porcentagem">0%</strong>
+            </div>
+            <div class="barra">
+                <div id="barraProgresso"></div>
+            </div>
+        </section>
+
+        <section class="painel">
+            <h2>Nova atividade</h2>
+
+            <form id="formTarefa">
+                <div class="campo">
+                    <label for="nome">Nome da atividade</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Ex.: Estudar JavaScript"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="data">Data de entrega</label>
+                    <input type="date" id="data" required>
+                </div>
+
+                <div class="campo">
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="Estudos">Estudos</option>
+                        <option value="Trabalho">Trabalho</option>
+                        <option value="Pessoal">Pessoal</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="prioridade">Prioridade</label>
+                    <select id="prioridade" required>
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média" selected>Média</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-adicionar">
+                    + Adicionar atividade
+                </button>
+            </form>
+        </section>
+
+        <section class="painel">
+            <div class="cabecalho-tarefas">
+                <h2>Minhas atividades</h2>
+
+                <select id="filtroCategoria" aria-label="Filtrar por categoria">
+                    <option value="Todas">Todas as categorias</option>
+                    <option value="Estudos">Estudos</option>
+                    <option value="Trabalho">Trabalho</option>
+                    <option value="Pessoal">Pessoal</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+
+            <div id="listaTarefas" class="lista-tarefas">
+                <p class="vazio">Nenhuma atividade cadastrada.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
